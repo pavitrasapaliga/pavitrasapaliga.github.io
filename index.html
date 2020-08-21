@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/form.css">
+		<title>Candidate Information</title>
+	</head>
+	<body>
+		<h1>Candidate Information: Enter Information Here</h1>
+		<form class="flex-container card">
+		
+			<!--***************************Name*******************************************-->
+			<label class="label" id="labelName">Full Name: </label>
+			<input type="text" class="input textbox" id="textBoxFullName" placeholder="ex: John Doe" pattern="[A-Za-z]{2,10} [A-Za-z]{2,10}" required />
+			<!--Only Alphabets, spaces allowed, each word upto length 10 allowed. And need to enter first and last name-->
+			
+			<!--***************************Gender**************************************-->
+			<label class="label" id="labelGender" >Gender: </label> <!--only one selection allowed-->
+			<div class="radio" id="divGenderRadio" style="float: right;">
+				<label class="radio-inlinelabel" id="radioLabelMale">
+					<input type="radio" name="gender" class="radio-inline" id="inlineRadioMale" value="Male">Male
+				</label>
+				<label class="radio-inline label" id="radioLabelFemale">
+					<input type="radio" name="gender" class="radio-inline" id="inlineRadioFemale" value="Female">Female
+				</label>
+				<label class="radio-inline label" id="radioLabelNonBinary">
+					<input type="radio" name="gender" class="radio-inline" id="inlineRadioNonBinary" value="Non-Binary">Non-Binary
+				</label>
+			</div>
+			
+			<!--***************************Address***********************************-->
+			<label class="label" id="labelAddress" >Address: </label><!-- Address has length restrictions of 200 characters -->
+			<textarea class="text-area input" id="textAreaAddress" rows="3" cols="30" placeholder="Enter Address here..." maxlength="200"></textarea> 
+				
+			<!--***************************Email***************************************-->
+			<label class="label" id="labelEmail">Email:</label>
+			<input type="email" placeholder="abc@example.com" class="input textbox" id="textBoxEmail"/>
+			
+			<!--***************************Phone Number******************************-->
+			<label class="label" id="labelPhoneNumber">Phone Number:</label><!--only numbers, 10 digit-->
+			<input type="tel" placeholder="ex: 1234567890" class="input textbox" id="textBoxNumber" pattern="[0-9]{10}" required />
+			
+			<!--***************************Education*******************************************-->
+			<table class="table" id ="tableEducation" width = "100%">
+				<label class="label" id="labelEducation">Education(Completed)<label>
+				<th>
+					<td id="labelLevel">Level</td>
+					<td id="labelYear">Year of completion</td>
+					<td id="labelGrade">Grade / %</td>
+					<td></td>
+				</th>
+				<!--Dynamic rows will be added here once Add Education is clicked-->
+			</table>
+			<button type="button" class="btn" id="btnAddEducation" onclick = "addRow('tableEducation')">Add Education</button><!--onclick adds/duplicates another ‘education’-->
+			
+			<!--***************************Skill***************************************-->
+			<table class="table" id="tableSkill" width = "100%">
+				<label>Skills<label>
+				<th>
+					<td id="labelSkillName">Name</td>
+					<td id="labelSkillRating">Self Rating</td>
+					<td></td>
+				</th>
+				<!--Dynamic rows will be added here once Add Skill is clicked-->
+			</table>
+			<button type="button" class="btn" id="btnAddSkill" onclick = "addRow('tableSkill')">Add Skill</button><!--onclick adds/duplicates another ‘skill’-->
+			
+			<!--***************************Hobbies*************************************-->
+			<label class="label" id="labelHobbies">Hobbies</label>
+			<input type="text" class="textbox input" id="textBoxHobbies" placeholder="separate by commas. ex:dancing, coding" width="50"/>
+			
+			<!--***************************Photo***************************************-->
+			<label class="label" id="labelPhoto">Photo</label>
+			<input type="url" class="textbox input" id="textBoxPhotos" placeholder="Please enter link to your online photo" width="50"/>
+			
+			<!--***************************Submit**************************************-->
+			<button type="submit" class="btn" id="btnSubmit" onclick="onSubmit()" onSubmit="validate()" target="_blank">Submit</button><!--onclick gets all the values in the form-->
+
+		</form>
+		
+		<footer><a href="https://www.linkedin.com/in/pavitra-sapaliga-941597116" target="_blank" >Developed by Pavitra Sapaliga</a></footer>
+		<script src="js/validate.js"></script>
+		<script src="js/form.js"></script>
+		
+	</body>
+</html>
