@@ -55,7 +55,7 @@ function addEducation(){
 					</td>\
 					<td><input type="year" class="textbox input tableEducationInput" id="textBoxEducationYear'+educationCounter+'" pattern="19[7-9]{1}[0-9]{1}|20[0-1]{1}[0-9]{1}|2020"></td>\
 					<!--Only years from 1970 - 2020 excepted through pattern-->\
-					<td><input type="text" class="textbox input" id="textBoxEducationGrade'+educationCounter+'" pattern="[A-F]|O|[0-9]{0,2}|100"></td>\
+					<td><input type="text" class="textbox input tableEducationGrade" id="textBoxEducationGrade'+educationCounter+'" pattern="[A-F]|O|[0-9]{0,2}|100"></td>\
 					<!--Accepts grades from A-F, O or % from 0-100-->\
 					<td><button type="button" class="btn" id="btnRemoveEducation'+educationCounter+'" onclick="deleteRow(\'tableEducationRow'+educationCounter+'\')">Remove</button></td>\
 					</tr>';
@@ -92,7 +92,7 @@ function addSkill() {
 
 //Retrieves all the input data from the user onclick
 function onSubmit(){
-	debugger;
+	
 	if(validate()) {
 		
 	
