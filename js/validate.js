@@ -58,7 +58,7 @@ document.getElementById("textBoxPhotos").onchange = function() {
 	} else {
 		document.getElementById("pPhotos").style.visibility = "hidden";
 		regexResult = true;
-	}
+	} 
 }
 
 function validationFunc(value) {
@@ -98,7 +98,7 @@ function validate() {
 
 	photos = document.getElementById("textBoxPhotos").value;
 		
-	if(regexResult && validationFunc(fullName, regexName()) && validateGender() && validationFunc(address, /^[\S\s]/) && validationFunc(email, ) && validationFunc(phoneNumber) && validationFunc(photos)) {
+	if(regexResult && validationFunc(fullName) && validateGender() && validationFunc(address) && validationFunc(email) && validationFunc(phoneNumber) && validationFunc(photos)) {
 		redirectFunction();
 		return true;
 	}
