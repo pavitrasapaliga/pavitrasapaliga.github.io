@@ -102,7 +102,7 @@ function validate() {
 		redirectFunction();
 		return true;
 	}
-	window.alert("All fields are mandatory. Please check your information before submitting");
+	window.alert("All fields are mandatory.You either have incomplete fields or not entered according to the format. Please check your information before submitting");
 	return false;
 	
 	
